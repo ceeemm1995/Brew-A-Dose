@@ -39,7 +39,7 @@ if 'user' not in st.session_state:
 
 if not st.session_state.get('logged_in', False):
     st.title("☕ Brew A Dose")
-    st.info("Hey Brewer! Please log in to continue.")
+    st.info("Hey, are you a Roaster, Barista, or a Home Brewer? Please log in to continue.")
 
     choice = st.sidebar.selectbox("Access", ["Login", "Sign Up"])
 
@@ -66,7 +66,7 @@ if not st.session_state.get('logged_in', False):
     if choice == "Sign Up":
        with st.form ("signup_form"):
 
-        role = st.selectbox("I am a:", ["Barista", "Roaster"])
+        role = st.selectbox("I am a:", ["Roaster", "Barista", "Home Brewer"])
         new_user = st.text_input("Choose Username")
         new_pass = st.text_input("Choose Password", type='password')
 
